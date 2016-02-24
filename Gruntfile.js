@@ -27,6 +27,16 @@ module.exports = (grunt) => {
                     'sass/*.{scss,sass}'
                 ],
                 tasks: ['sass:main']
+            },
+            express: {
+                files: [
+                    'server.js'
+                ],
+                tasks: ['express'],
+                options: {
+                    spawn: false
+                }
+
             }
         },
 
@@ -49,7 +59,7 @@ module.exports = (grunt) => {
 
     grunt.registerTask('serve', [
         'express',
-        'watch:sass'
+        'watch'
     ])
 
     grunt.registerTask('default', ['serve'])
