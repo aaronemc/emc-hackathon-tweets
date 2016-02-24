@@ -8,18 +8,17 @@ module.exports = (grunt) => {
     // monitors .scss files for changes and runs the sass task if they change
     grunt.loadNpmTasks('grunt-contrib-watch')
 
-    // runs a minimal web server
-    grunt.loadNpmTasks('grunt-contrib-connect')
+    // runs our little express server from grunt
+    grunt.loadNpmTasks('grunt-express-server')
+
 
     grunt.initConfig({
 
-        connect: {
-            serve: {
-                options: {
-                    port: 9000,
-                    base: '.'
-                }
-            }
+        express: {
+            options: {
+                script: 'server.js'
+            },
+            main: {}
         },
 
         watch: {
@@ -49,7 +48,9 @@ module.exports = (grunt) => {
     })
 
     grunt.registerTask('serve', [
-        'connect:serve',
+        'express',
         'watch:sass'
     ])
+
+    grunt.registerTask('default', ['serve'])
 }
