@@ -1,0 +1,27 @@
+@import 'reset';
+@import 'colors';
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Verdana", sans-serif;
+  font-size: 14pt;
+}
+
+body {
+  // sets the font to 100% of the parent element's size
+  height:98%;
+  margin:0;
+  padding:10px;
+  background-color: $mainBackground;
+  overflow: hidden;
+}
+
+// plain links that bold when hovered
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    font-weight: bold;
+  }
+}
