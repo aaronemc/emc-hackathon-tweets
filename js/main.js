@@ -7,8 +7,8 @@ $(document).ready(function () {
 
     // do twitter auth
     $.ajax({
-        method: 'POST',
-        url: '/auth',
+        method: 'GET',
+        url: '/tweets',
         data: {}
     })
         .done(function (result) {
