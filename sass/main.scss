@@ -1,7 +1,38 @@
 @import 'base';
 @import 'colors';
 
-.mainThing {
-  background: orange;
+.tweet-container {
+
+  .tweet {
+    position: absolute;
+    left: 15%;
+    margin-top: 11%;
+    margin-right: 15%;
+    transition: opacity 2.0s ease-in-out;
+    -moz-transition: opacity 2.0s ease-in-out;
+    -webkit-transition: opacity 2.0s ease-in-out;
+
+    .text {
+      display: block;
+      text-align: justify;
+      font-size: 3.0em;
+      margin-bottom: 0.4em;
+    }
+    .name {
+      margin-top: 1%;
+      font-size: 1.5em;
+    }
+
+    .time {
+      font-size: 1.5em;
+    }
+
+    .image {
+      padding-right: 0.2em;
+    }
+  }
+
 }
+
+
 

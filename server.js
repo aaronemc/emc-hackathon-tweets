@@ -32,7 +32,7 @@ module.exports = (() => {
 
         restClient(searchTweetsReq)
             .then((tweets) => {
-                console.log('TTT', tweets)
+                console.log(JSON.stringify(tweets, null, '  '))
                 res.json(tweets)
             })
             .catch((err) => {
