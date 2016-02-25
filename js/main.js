@@ -54,7 +54,6 @@ $(document).ready(function () {
                             .then(() => {
                                 // decide which one needs updating
                                 let prefix = tweet.emcIndex % 2 == 0 ? '.second' : '.first'
-                                console.log('prefix', prefix)
                                 let timeStr = moment(Date.parse(tweet.created_at)).fromNow()
                                 $(`${prefix} .text`).html(tweet.text)
                                 $(`${prefix} .name`).html(tweet.user.name)
@@ -63,13 +62,10 @@ $(document).ready(function () {
                             })
                             .then(() => {
                                 // now hide the shown one, and show the hidden one
-                                console.log('count', tweet.emcIndex)
                                 if (tweet.emcIndex % 2 == 0) {
-                                    console.log('one')
                                     $('.first').css('opacity', 0)
                                     $('.second').css('opacity', 1)
                                 } else {
-                                    console.log('two')
                                     $('.second').css('opacity', 0)
                                     $('.first').css('opacity', 1)
                                 }
