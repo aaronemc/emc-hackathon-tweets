@@ -16,6 +16,8 @@ module.exports = (() => {
 
     let port = 9000
 
+    const twitterSearchString = 'from:guychurchward OR @emc OR #emc'
+
 
     let getTweets = (req, res, next) => {
         let searchTweetsReq = {
@@ -25,7 +27,8 @@ module.exports = (() => {
             },
             'uri': twitterSearchAPI,
             'qs': {
-                'q': '#emc'
+                'q': twitterSearchString,
+                'count': 50
             },
             json: true
         }
