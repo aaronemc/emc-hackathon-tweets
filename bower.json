@@ -19,6 +19,7 @@
   "dependencies": {
     "jquery": "^2.2.1",
     "underscore": "^1.8.3",
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "q": "1.4.1"
   }
 }
