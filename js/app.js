@@ -7,41 +7,18 @@
 
 
     window.console.log('ready!');
-    var minutesBetweenTweetFetch = 10;
-    // var msBetweenTweets = 15000;
-    // var _lastTweetFetchMom;
+    tweets.getTweets().then(
+      function success(response){
+        window.console.log(response.data.statuses);
+        var data = response.data;
 
-    tweets.getTweets(minutesBetweenTweetFetch).then(function(response){
-      window.console.log(response.data.statuses);
-      var data = response.data;
-
-      $scope.tweets = data.statuses;
-      $scope.search = data.search_metadata;
-    });
-    // .error(function(err){
-    //   console.log('error', err);
-    // });
-
-    // let's only fetch new tweets every 10 minutes or so
-    // if (!_lastTweetFetchMom || moment().diff(_lastTweetFetchMom, 'minutes') >= minutesBetweenTweetFetch) {
-    //   window.console.log('fetching new tweets');
-    //   $scope.tweets = tweets.getTweets(minutesBetweenTweetFetch).tweets;
-    //   window.console.log('get tweets', tweets.getTweets(minutesBetweenTweetFetch));
-    //   _lastTweetFetchMom = moment();
-    // } else {
-    //   window.console.log('not time to fetch new tweets yet');
-    // }
-
-    // var cycleForever = function(){
-    //   return tweets.rotateTweets()
-    //   .then(function(){
-    //     return Q.delay(1000);
-    //   })
-    //   .then(function(){
-    //     return cycleForever();
-    //   })
-    // };
-    // cycleForever();
+        $scope.tweets = data.statuses;
+        $scope.search = data.search_metadata;
+      },
+      function fail(err){
+        console.log('error', err);
+      }
+    );
   }])
 
   .factory('tweetsService', ['$http', function($http){
