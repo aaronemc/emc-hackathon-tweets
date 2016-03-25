@@ -1,0 +1,22 @@
+.hack-carousel {
+  display: flex;
+  flex-direction: row;
+  // overflow: auto;
+}
+.hack-card {
+  flex: 0 0 calc(100vmin / 3);
+  min-height: 30vmin;
+  border: 1px solid;
+  padding: 1em;
+  margin: 1em;
+  transition: .3s ease-out;
+  &.active {
+    background: #fff;
+    transform: scale(2);
+    box-shadow: 0 .65em 3em -.5em;
+  }
+  &:empty {
+    border: 0;
+    flex: 0 0 calc(100vmin / 2);
+  }
+}
