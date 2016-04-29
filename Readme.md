@@ -3,7 +3,7 @@ EMC Hackathon Tweets!
 
 ## Tag: badass-step-02
 
-You have a minimal working angular client and server:
+You have a minimal working angular client and express server:
 
 1. index.html - You have an index.html page that calls a rest API and displays the data with angular
 2. app.js - You have a controller that calls a REST API and puts data on $scope
