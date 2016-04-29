@@ -7,12 +7,20 @@
 
       $http.post('/auth')
         .then(function(response) {
-            console.log('received', response);
             $scope.hasAuthenticated = response.data.auth;
+
+            return $http.get('/tweets')
           },
           function(err) {
             console.log('error', err);
           })
+        .then(function(response) {
+          console.log('received tweets', response);
+          $scope.tweets = response.data;
+
+        }, function(err) {
+          console.log('err', err);
+        });
     }])
 
 })(window.angular, window._, window.moment);
