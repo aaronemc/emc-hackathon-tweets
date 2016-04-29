@@ -1,0 +1,144 @@
+{
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Fri Apr 29 22:19:30 +0000 2016",
+    "entities": {
+        "hashtags": [
+            {
+                "indices": [
+                    61,
+                    68
+                ],
+                "text": "MMTM16"
+            },
+            {
+                "indices": [
+                    72,
+                    81
+                ],
+                "text": "EMCWORLD"
+            },
+            {
+                "indices": [
+                    83,
+                    87
+                ],
+                "text": "EMC"
+            },
+            {
+                "indices": [
+                    88,
+                    92
+                ],
+                "text": "ECM"
+            }
+        ],
+        "symbols": [],
+        "urls": [
+            {
+                "display_url": "shrd.vu/bi6SQ",
+                "expanded_url": "http://shrd.vu/bi6SQ",
+                "indices": [
+                    93,
+                    116
+                ],
+                "url": "https://t.co/lJjrAArHgb"
+            }
+        ],
+        "user_mentions": [
+            {
+                "id": 37734253,
+                "id_str": "37734253",
+                "indices": [
+                    1,
+                    12
+                ],
+                "name": "Rohit Ghai",
+                "screen_name": "rohit_ghai"
+            }
+        ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 726174093180018700,
+    "id_str": "726174093180018688",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "metadata": {
+        "iso_language_code": "en",
+        "result_type": "recent"
+    },
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://sharedvue.com/\" rel=\"nofollow\">SharedVue Platform</a>",
+    "text": ".@rohit_ghai shares what he's most looking excited about for #MMTM16 at #EMCWORLD! #EMC #ECM https://t.co/lJjrAArHgb",
+    "truncated": false,
+    "user": {
+        "contributors_enabled": false,
+        "created_at": "Wed Jul 11 20:59:47 +0000 2012",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Vicom Computer Services, Inc. is a leading provider of new age technology that drives business value through the delivery of customized IT solutions.",
+        "entities": {
+            "description": {
+                "urls": []
+            },
+            "url": {
+                "urls": [
+                    {
+                        "display_url": "vicomnet.com",
+                        "expanded_url": "http://www.vicomnet.com",
+                        "indices": [
+                            0,
+                            22
+                        ],
+                        "url": "http://t.co/B5bbPA4cLI"
+                    }
+                ]
+            }
+        },
+        "favourites_count": 97,
+        "follow_request_sent": null,
+        "followers_count": 368,
+        "following": null,
+        "friends_count": 511,
+        "geo_enabled": true,
+        "has_extended_profile": false,
+        "id": 633212369,
+        "id_str": "633212369",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 103,
+        "location": "Farmingdale, NY",
+        "name": "Vicom Computer Svcs",
+        "notifications": null,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/601974421/5lhmgs4wr9bv40h5ymdq.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/601974421/5lhmgs4wr9bv40h5ymdq.jpeg",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/633212369/1459441404",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/715578411587092481/JX1xP-in_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/715578411587092481/JX1xP-in_normal.jpg",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "VicomComputer",
+        "statuses_count": 2320,
+        "time_zone": "Atlantic Time (Canada)",
+        "url": "http://t.co/B5bbPA4cLI",
+        "utc_offset": -10800,
+        "verified": false
+    }
+}

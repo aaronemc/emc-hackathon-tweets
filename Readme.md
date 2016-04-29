@@ -1,17 +1,18 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-05
+## Tag: badass-step-06
 
-This step adds code to pull tweets into the UI using angular $http
+This step builds a minimal UI of tweets
 
 1. index.html - Displays authenticated status true | false
 2. app.js - When the controller loads (when the page loads), it calls /auth, which does authentication with twitter to get a key, then responds with JSON containing  `{auth : true}`
 3. server.js - Adds the /auth endpoint, which will call the twitter auth API to get a key.  If you're feeling brave, read more about twitter [twitter oauth here](https://dev.twitter.com/oauth/application-only)
 4. This step includes the /tweets API which uses the [twitter search API](https://dev.twitter.com/rest/public/search) to search twitter for specific keywords and return a list of tweets
 5. In **app.js** we're using the main controller to first call `/auth` then call `/tweets` and stick the data on $scope so it can be displayed in index.html
+6. For reference : **An example tweet JSON record** is in example-tweet.json, and the full definition of each a tweet JSON record is [available here](https://dev.twitter.com/rest/reference/get/search/tweets)
 
-6. **NEXT** : Now start building a real UI.  Put those tweets in some type of list using angular `ng-repeat`
+7. **NEXT** : Give the UI some style!
 
 
 Ensure all the packages in package.json are installed by running `npm install`

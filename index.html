@@ -10,8 +10,13 @@
   </head>
 
   <body ng-app="emcTweetApp" ng-controller="main-controller">
-    authenticated {{hasAuthenticated}}
-    <pre>{{tweets|json}}</pre>
+
+    <div ng-repeat="tweet in tweets.statuses">
+      <div>USER {{tweet.user.name}}</div>
+      <div>TEXT {{tweet.text}}</div>
+      <div>--------------</div>
+    </div>
+
   </body>
 
 </html>
