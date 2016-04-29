@@ -7,14 +7,21 @@
     <script src="angular.js"></script>
     <script src="app.js"></script>
 
+    <link rel="stylesheet" href="main.css"/>
+
   </head>
 
   <body ng-app="emcTweetApp" ng-controller="main-controller">
 
-    <div ng-repeat="tweet in tweets.statuses">
-      <div>USER {{tweet.user.name}}</div>
-      <div>TEXT {{tweet.text}}</div>
-      <div>--------------</div>
+    <div class="tweet" ng-repeat="tweet in tweets.statuses">
+      <div>
+        <span class="user-label">USER</span>
+        <span class="user">{{tweet.user.name}}</span>
+      </div>
+      <div>
+        <span class="text-label">TEXT</span>
+        <span class="text">{{tweet.text}}</span>
+      </div>
     </div>
 
   </body>

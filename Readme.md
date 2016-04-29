@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-06
+## Tag: badass-step-07
 
 This step builds a minimal UI of tweets
 
@@ -11,8 +11,7 @@ This step builds a minimal UI of tweets
 4. This step includes the /tweets API which uses the [twitter search API](https://dev.twitter.com/rest/public/search) to search twitter for specific keywords and return a list of tweets
 5. In **app.js** we're using the main controller to first call `/auth` then call `/tweets` and stick the data on $scope so it can be displayed in index.html
 6. For reference : **An example tweet JSON record** is in example-tweet.json, and the full definition of each a tweet JSON record is [available here](https://dev.twitter.com/rest/reference/get/search/tweets)
-
-7. **NEXT** : Give the UI some style!
+7. Here we've added **main.css** and included it at the top of index.html
 
 
 Ensure all the packages in package.json are installed by running `npm install`
