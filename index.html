@@ -11,10 +11,13 @@
 
   <body ng-app="emcTweetApp" ng-controller="main-controller">
 
-    <div ng-repeat="tweet in tweets.statuses">
-      <div>USER {{tweet.user.name}}</div>
-      <div>TEXT {{tweet.text}}</div>
-      <div>--------------</div>
+    <div class="tweet-container hack-carousel">
+      <div class="hack-card"></div>
+      <div class="hack-card" ng-repeat="tweet in tweets" ng-class="{'active': $index === active}" ng-style="styleCard(tweet)">
+        {{tweet.text}}
+        <!-- <pre>{{tweet | json}}</pre> -->
+      </div>
+      <div class="hack-card"></div>
     </div>
 
   </body>

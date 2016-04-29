@@ -1,9 +1,10 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-07
+## Tag: badass-step-08
 
-This step adds a main.css file to your UI, and gives it a little more structure.
+In this step we'll change the UI to phase 1 of the rotating tweet carousel.  In this step we'll just display tweets horizontally.
+in the next step we'll make the tweets cycle through.
 
 1. index.html - Displays authenticated status true | false
 2. app.js - When the controller loads (when the page loads), it calls /auth, which does authentication with twitter to get a key, then responds with JSON containing  `{auth : true}`

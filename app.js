@@ -16,7 +16,7 @@
           })
         .then(function(response) {
           console.log('received tweets', response);
-          $scope.tweets = response.data;
+          $scope.tweets = response.data.statuses;
 
         }, function(err) {
           console.log('err', err);
