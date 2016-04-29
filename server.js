@@ -10,10 +10,12 @@ module.exports = (function() {
   // todo it would be better to read this in from a file that isn't checked in
   var consumerKey = 'yYfHaXtb1rHW06TvalYgqHmTc';
   var consumerSecret = 'OQmDIdT3xRtvVyolAUmuqzCj8xAVrNiskk0LgRrYZ08yqSXHHU';
+  var twitterSearchAPI = 'https://api.twitter.com/1.1/search/tweets.json';
   var twitterAuthAPI = 'https://api.twitter.com/oauth2/token';
 
   // this will get updated when /auth is called
   var twitterAuthToken = 'AAAAAAAAAAAAAAAAAAAAAA9LtwAAAAAAeihb7UwP%2B6hq8GZBlS0HKH%2Bu1qs%3DWAzj5p8Aq67HPskRnFi6ydvN0nogHIyH8Vg4znGo2dDiruNncC';
+  var twitterSearchString = 'from:guychurchward OR @emc OR #emc'
 
 
   var app = express();
@@ -74,12 +76,42 @@ module.exports = (function() {
           'error': err
         });
       });
-
   }
+
+
+
+  var getTweets = function(req, res) {
+    let searchTweetsReq = {
+      'request': 'GET',
+      'headers': {
+        'Authorization': 'Bearer ' + twitterAuthToken
+      },
+      'uri': twitterSearchAPI,
+      'qs': {
+        'q': twitterSearchString,
+        'count': 50
+      },
+      json: true
+    }
+
+    restClient(searchTweetsReq)
+      .then((tweets) => {
+        console.log(JSON.stringify(tweets, null, '  '))
+        res.json(tweets)
+      })
+      .catch((err) => {
+        res.status(500).json({
+          'error': err
+        })
+        console.log('error', err)
+      })
+
+  };
 
   app.post('/auth', handleAuth);
   app.get('/foo', getHandler);
   app.put('/bar', putHandler);
+  app.get('/tweets', getTweets);
 
   app.listen(5000, function() {
     console.log('listening on port 5000');
