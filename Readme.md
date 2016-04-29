@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-start-01
+## Tag: badass-step-01
 
 You have some *basic* building blocks you need here to build a complete web app:
 
