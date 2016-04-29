@@ -3,13 +3,15 @@
 
   angular.module('emcTweetApp', [])
     .controller('main-controller', ['$scope', '$http', function($scope, $http) {
+      $scope.hasAuthenticated = false;
 
-      $http.get('/foo')
+      $http.post('/auth')
         .then(function(response) {
-            $scope.data = response.data;
+            console.log('received', response);
+            $scope.hasAuthenticated = response.data.auth;
           },
           function(err) {
-
+            console.log('error', err);
           })
     }])
 
