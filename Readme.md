@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-03
+## Step 3
 
 This step adds the server-side code to deal with twitter authentication
 
