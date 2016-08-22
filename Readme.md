@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-04
+## Step 04
 
 This step adds the **server-side** code to deal with actually getting tweets from the twitter search API.  **No tweets will be displayed in the UI yet**.
 
