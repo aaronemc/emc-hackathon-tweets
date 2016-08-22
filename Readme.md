@@ -17,12 +17,12 @@ The project is broken into branches from 1 to 9.  Branch 1 starts with a minimal
 **Front-endians** To ONLY build the UI, start with [step 5](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-5)
 
 
-1. [**badass-step-1**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-1) - Almost nothing.  Just a few placeholder files for client and server code
-1. [**badass-step-2**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-2) - Minimal express server with /get and /put endpoints
-1. [**badass-step-3**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-3) - Adds server code to deal with twitter authentication
-1. [**badass-step-4**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-4) - Adds server code to deal with getting tweets
-1. [**badass-step-5**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-5) - Adds raw tweet data delivered to the UI
-1. [**badass-step-6**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-6) - Adds the simplest UI to display tweets
-1. [**badass-step-7**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-7) - Adds a stylesheet to the UI
-1. [**badass-step-8**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-8) - Display tweets in horizontal boxes, but no movement
-1. [**badass-step-9**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-9) - Final working example with css3 animation, sass, and grunt
+1. [**step-1**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-1) - Almost nothing.  Just a few placeholder files for client and server code
+1. [**step-2**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-2) - Minimal express server with /get and /put endpoints
+1. [**step-3**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-3) - Adds server code to deal with twitter authentication
+1. [**step-4**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-4) - Adds server code to deal with getting tweets
+1. [**step-5**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-5) - Adds raw tweet data delivered to the UI
+1. [**step-6**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-6) - Adds the simplest UI to display tweets
+1. [**step-7**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-7) - Adds a stylesheet to the UI
+1. [**step-8**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-8) - Display tweets in horizontal boxes, but no movement
+1. [**step-9**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-9) - Final working example with css3 animation, sass, and grunt
