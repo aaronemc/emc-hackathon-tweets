@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-08
+## Step 08
 
 In this step we'll change the UI to phase 1 of the rotating tweet carousel.  In this step we'll just display tweets horizontally.
 in the next step we'll make the tweets cycle through.
