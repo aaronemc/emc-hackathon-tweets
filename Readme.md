@@ -1,6 +1,6 @@
 # EMC Hackathon Tweets
 
-## Tag: badass-step-09
+## Step 09
 
 This is the **final project**.  This step adds:
 * the use of [SASS](http://sass-lang.com/) to make writing css even more fun
