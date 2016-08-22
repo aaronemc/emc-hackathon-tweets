@@ -2,9 +2,6 @@
 
 'use strict'
 
-var express = require('express');
-
-
 module.exports = (function() {
-
+  console.log('HELLO STEP 1')
 })()

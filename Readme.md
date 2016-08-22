@@ -10,8 +10,11 @@ You have some *basic* building blocks you need here to build a complete web app:
 3. server.js - Your server code goes here
 4. angular.js - Angular.js 1.5 library
 
-### The rest is up to you.  Get busy!
 
 ### Tips:
-• Try getting a simple [express](https://expressjs.com/) server running
-• Experiment with the [twitter API](https://dev.twitter.com/rest/tools/console)
+• Try getting a simple [express](https://expressjs.com/) server running<br/>
+• Experiment with the [twitter API](https://dev.twitter.com/rest/tools/console)<br/>
+• Try running your server by typing `node server.js`.  It won't do too much yet<br/>
+• You can view your `index.html` file in a browser, by choosing file -> open -> index.html
+
+### The rest is up to you.  Get busy!
