@@ -3,7 +3,7 @@ EMC Hackathon Tweets!
 
 ## Tag: badass-step-07
 
-This step builds a minimal UI of tweets
+This step builds a minimal UI of tweets, **with STYLE**.  We add a main.css style sheet in this step.
 
 1. index.html - Displays authenticated status true | false
 2. app.js - When the controller loads (when the page loads), it calls /auth, which does authentication with twitter to get a key, then responds with JSON containing  `{auth : true}`
