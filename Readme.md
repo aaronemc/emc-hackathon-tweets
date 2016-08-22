@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-06
+## Step 06
 
 This step builds a minimal UI of tweets
 
