@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-07
+## Step 07
 
 This step builds a minimal UI of tweets, **with STYLE**.  We add a main.css style sheet in this step.
 
