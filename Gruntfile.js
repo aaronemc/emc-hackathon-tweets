@@ -62,5 +62,5 @@ module.exports = (grunt) => {
         'watch'
     ])
 
-    grunt.registerTask('default', ['serve'])
+    grunt.registerTask('default', ['sass','serve'])
 }
