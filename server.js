@@ -14,7 +14,7 @@ module.exports = (() => {
     const twitterSearchAPI = 'https://api.twitter.com/1.1/search/tweets.json'
     let twitterAuthToken = 'AAAAAAAAAAAAAAAAAAAAAA9LtwAAAAAAeihb7UwP%2B6hq8GZBlS0HKH%2Bu1qs%3DWAzj5p8Aq67HPskRnFi6ydvN0nogHIyH8Vg4znGo2dDiruNncC'
 
-    let port = 9000
+    let port = 5000
 
     const twitterSearchString = 'from:guychurchward OR @emc OR #emc'
 
