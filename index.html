@@ -9,7 +9,13 @@
 
   </head>
 
+  <!-- adding ng-app here causes angular to 'take over' the body element -->
+  <!-- main-controller will initialize when this view runs -->
   <body ng-app="emcTweetApp" ng-controller="main-controller">
+    <h1>Badass Step 02</h1>
+
+    <!-- anything surrounded with {{ }} refers to a $scope variable in main-controller -->
+    <!-- |json is an angular 'pipe' or 'filter' that formats the data -->
     <h3><pre>{{data|json}}</pre></h3>
   </body>
 
