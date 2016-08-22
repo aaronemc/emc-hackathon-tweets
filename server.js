@@ -8,6 +8,9 @@ var restClient = require('request-promise');
 
 module.exports = (function() {
   // todo it would be better to read this in from a file that isn't checked in
+
+  // These credentials are specific to CP.  Feel free to use these, or get your own keys, which only takes a minute
+  // You can get your own app credentials here : https://dev.twitter.com/oauth/overview/application-owner-access-tokens
   var consumerKey = 'yYfHaXtb1rHW06TvalYgqHmTc';
   var consumerSecret = 'OQmDIdT3xRtvVyolAUmuqzCj8xAVrNiskk0LgRrYZ08yqSXHHU';
   var twitterAuthAPI = 'https://api.twitter.com/oauth2/token';
@@ -56,12 +59,15 @@ module.exports = (function() {
       'body': 'grant_type=client_credentials'
     }
 
+    // send POST to twitter to do auth and handle response
     restClient(oauthPost)
       .then((authResponse) => {
         console.log('successful response', authResponse)
 
-        // set this variable, which should be used in future calls to
+        // set this variable, which should be used in future calls
         twitterAuthToken = authResponse.access_token;
+
+        // respond to browser
         res.json({
           'auth': true,
           'data': authResponse

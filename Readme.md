@@ -17,6 +17,16 @@ Start your server with
 
 Then point your browser to `http://localhost:5000`
 
+## Whats happening here?
+1. index.html loads in the browser and pulls in the `<script>` tags one by one and executes them
+2. When **app.js** is loaded, the angular app initializes
+3. The **main-controller** initializes and uses `$http` to send a **POST** `/auth` to our node server listening on port **5000**
+4. Our node server handles the `/auth` **POST**.  It then does a separate POST to the twitter authentication API, and handles the response.
+5. The node server handles the auth response from twitter, and responds to the browser
+6. The angular app handles the response from our node server and sets the `hasAuthenticated` variable on scope
+7. The UI displays hasAuthenticated
+8. Detailed overview of twitter oauth [here](https://dev.twitter.com/oauth/application-only)
+
 The server APIs look like this:
 
 ```
