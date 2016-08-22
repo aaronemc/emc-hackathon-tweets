@@ -14,7 +14,11 @@ git clone https://github.com/EMC-UI/emc-hackathon-tweets.git
 
 The project is broken into branches from 1 to 9.  Branch 1 starts with a minimal skeleton project, branch 9 is the full working example.
 
-**Front-endians** To ONLY build the UI, start with [step 5](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-5)
+**full stackers** Be brave and start with [step-1](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-1).  You can always look at further steps for hints.
+
+**front-endians** To start with complete plumbing, and only build the UI, start with [step 5](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-5)
+
+**back-endians** To start with a complete UI, and build only the plumbing, start with [complete-ui](https://github.com/EMC-UI/emc-hackathon-tweets/tree/complete-ui)
 
 
 1. [**step-1**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-1) - Almost nothing.  Just a few placeholder files for client and server code
@@ -26,3 +30,4 @@ The project is broken into branches from 1 to 9.  Branch 1 starts with a minimal
 1. [**step-7**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-7) - Adds a stylesheet to the UI
 1. [**step-8**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-8) - Display tweets in horizontal boxes, but no movement
 1. [**step-9**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/badass-step-9) - Final working example with css3 animation, sass, and grunt
+1. [**complete-ui**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/complete-ui) - In this step, the UI is complete, and you provide the backend plumbing
