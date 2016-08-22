@@ -1,11 +1,8 @@
 # EMC Hackathon Tweets
 
-## Step 09
+## Complete UI (only UI)
 
-This is the **final project**.  This step adds:
-* the use of [SASS](http://sass-lang.com/) to make writing css even more fun
-* the use of [grunt](http://gruntjs.com/), a javascript build tool for automating things
-* the user of [bower])(https://bower.io/), a package manager for client-side dependencies
+In This step, the UI is complete, and the backend plumbing needs to be built.  The UI expects to call **/tweets** and receive a JSON response.  The UI expects the JSON to be formatted [like this](#tweet-json-format).  Look at server.js at the getTweets method
 
 
 
@@ -30,6 +27,7 @@ Then point your browser to `http://localhost:5000`
 **grunt** has taken control of running server.js.  Grunt is also handling the conversion of `*.scss` to `*.css` files, which the browser can understand.  Try changing one of the .scss files and watch what happens.
 
 
+### tweet JSON format
 The server APIs look like this:
 
 ```

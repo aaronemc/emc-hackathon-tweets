@@ -20,29 +20,9 @@ module.exports = (() => {
 
 
     let getTweets = (req, res, next) => {
-        let searchTweetsReq = {
-            'request': 'GET',
-            'headers': {
-                'Authorization': 'Bearer ' + twitterAuthToken
-            },
-            'uri': twitterSearchAPI,
-            'qs': {
-                'q': twitterSearchString,
-                'count': 50
-            },
-            json: true
-        }
-
-        restClient(searchTweetsReq)
-            .then((tweets) => {
-                console.log(JSON.stringify(tweets, null, '  '))
-                res.json(tweets)
-            })
-            .catch((err) => {
-                res.status(500).json({'error': err})
-                console.log('error', err)
-            })
-
+      // LOOK HERE.  You'll need to call the twitter search API , handle the response, and send JSON
+      // back to the browser
+      res.json({})
     }
 
 
@@ -91,4 +71,3 @@ module.exports = (() => {
     init()
 
 })()
-
