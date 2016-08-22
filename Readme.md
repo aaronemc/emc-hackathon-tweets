@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-02
+## Step 02
 
 You have a minimal working angular client and express server:
 
