@@ -3,7 +3,7 @@ EMC Hackathon Tweets!
 
 ## Tag: badass-step-04
 
-This step adds the server-side code to deal with actually getting tweets from the twitter search API
+This step adds the **server-side** code to deal with actually getting tweets from the twitter search API.  **No tweets will be displayed in the UI yet**.
 
 1. index.html - Displays authenticated status true | false
 2. app.js - When the controller loads (when the page loads), it calls /auth, which does authentication with twitter to get a key, then responds with JSON containing  `{auth : true}`
@@ -17,6 +17,8 @@ Start your server with
 `node server.js`
 
 Then point your browser to `http://localhost:5000`
+
+Call your node server's /tweets API right in the browser by opening `http://localhost:5000/tweets`
 
 The server APIs look like this:
 
