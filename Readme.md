@@ -3,7 +3,7 @@ EMC Hackathon Tweets!
 
 ## Tag: badass-step-05
 
-This step adds code to pull tweets into the UI using angular $http
+This step adds code to pull tweets into the UI **as raw JSON data** using angular $http
 
 1. index.html - Displays authenticated status true | false
 2. app.js - When the controller loads (when the page loads), it calls /auth, which does authentication with twitter to get a key, then responds with JSON containing  `{auth : true}`
