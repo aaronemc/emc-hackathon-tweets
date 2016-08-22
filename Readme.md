@@ -1,7 +1,7 @@
 EMC Hackathon Tweets!
 -----
 
-## Tag: badass-step-05
+## Step 05
 
 This step adds code to pull tweets into the UI **as raw JSON data** using angular $http
 
