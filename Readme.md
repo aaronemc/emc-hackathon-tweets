@@ -5,10 +5,10 @@
 This is the **final project**.  This step adds:
 * the use of [SASS](http://sass-lang.com/) to make writing css even more fun
 * the use of [grunt](http://gruntjs.com/), a javascript build tool for automating things
-* the user of [bower])(https://bower.io/), a package manager for client-side dependencies
+* the user of [bower](https://bower.io/), a package manager for client-side dependencies
 
 
-
+#### Description of files
 1. index.html - Displays authenticated status true | false
 2. app.js - When the controller loads (when the page loads), it calls /auth, which does authentication with twitter to get a key, then responds with JSON containing  `{auth : true}`
 3. server.js - Adds the /auth endpoint, which will call the twitter auth API to get a key.  If you're feeling brave, read more about twitter [twitter oauth here](https://dev.twitter.com/oauth/application-only)
@@ -20,10 +20,15 @@ This is the **final project**.  This step adds:
 
 Ensure all the packages in package.json are installed by running `npm install`
 
-**>>>NEW** Ensure all your client-side dependencies are installed by running `bower install`
+**>>>NEW** Ensure all your client-side dependencies are installed by running:
+```
+bower install
+```
 
-**>>>NEW** Start your server with
-`grunt`
+**>>>NEW** Start your server with:
+```
+grunt
+```
 
 Then point your browser to `http://localhost:5000`
 
