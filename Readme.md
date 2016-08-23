@@ -12,9 +12,9 @@ You have some *basic* building blocks you need here to build a complete web app:
 
 
 ### Tips:
-* Try getting a simple [express](https://expressjs.com/) server running<br/>
-* Experiment with the [twitter API](https://dev.twitter.com/rest/tools/console)<br/>
-* Try running your server by typing `node server.js`.  It won't do too much yet<br/>
-* You can view your `index.html` file in a browser, by choosing file -> open -> index.html
+* Try getting a simple [express](https://expressjs.com/) server running
+* Experiment with the [twitter API](https://dev.twitter.com/rest/tools/console)
+* Try running your server by typing `node server.js`.  It won't do too much yet
+* You can view your `index.html` file in a browser, by choosing file -> open -> index.html
 
 ### The rest is up to you.  Get busy!
