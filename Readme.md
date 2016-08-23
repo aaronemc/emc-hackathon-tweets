@@ -44,7 +44,7 @@ git checkout step-1
 The basic workflow you should follow goes like this:<br/>
 1. Write code, run code, have fun<br/>
 2. `git add {filename}` to add new files<br/>
-3. `git commit -a` to commit changes to your local repo
-4. `git push origin {branch name}` to push changes up to github
+3. `git commit -a` to commit changes to your local repo<br/>
+4. `git push origin {branch name}` to push changes up to github<br/>
 
 Here is a [git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and a good guide for [getting started with git](http://rogerdudler.github.io/git-guide/).
