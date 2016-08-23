@@ -41,9 +41,9 @@ git checkout step-1
 ```
 
 ## Hack away!
-The basic workflow you should follow goes like this:
-1. Write code, run code, have fun
-2. `git add {filename}` to add new files
+The basic workflow you should follow goes like this:<br/>
+1. Write code, run code, have fun<br/>
+2. `git add {filename}` to add new files<br/>
 3. `git commit -a` to commit changes to your local repo
 4. `git push origin {branch name}` to push changes up to github
 
