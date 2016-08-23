@@ -12,6 +12,7 @@
   "dependencies": {
     "bower": "^1.7.9",
     "express": "^4.13.4",
+    "grunt-cli": "^1.2.0",
     "grunt-sass": "^1.1.0",
     "request-promise": "^1.0.1"
   },
