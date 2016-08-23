@@ -5,7 +5,7 @@
 This is the **final project**.  This step adds:
 * the use of [SASS](http://sass-lang.com/) to make writing css even more fun
 * the use of [grunt](http://gruntjs.com/), a javascript build tool for automating things
-* the user of [bower](https://bower.io/), a package manager for client-side dependencies
+* the use of [bower](https://bower.io/), a package manager for client-side dependencies
 
 
 #### Description of files
