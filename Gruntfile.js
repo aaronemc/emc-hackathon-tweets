@@ -58,6 +58,7 @@ module.exports = (grunt) => {
     })
 
     grunt.registerTask('serve', [
+        'sass',
         'express',
         'watch'
     ])
