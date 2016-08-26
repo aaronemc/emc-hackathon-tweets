@@ -5,14 +5,13 @@
 This hackathon example app involves using the [twitter search API](https://dev.twitter.com/rest/public/search) to retrieve content (tweets) from [Twitter](http://twitter.com).  The example uses search strings of **from:guychurchward** , **#emc**, and **@emc**
 
 ## Getting Started
-1. Fork this repo into your own account.  This creates your own copy which you can make changes to.  Click this button in the upper-right.
-![fork](https://raw.githubusercontent.com/EMC-UI/emc-hackathon-tweets/master/fork.png)
-1. Now clone the repo onto your machine.  This 'checks out' the code into your local environment.
+
+### 1. **Clone** the repo onto your machine.  This 'checks out' the code into your local environment.
 ```
 git clone https://github.com/EMC-UI/emc-hackathon-tweets.git
 ```
 
-## Choose a starting point
+### 2. Choose a starting point and checkout one of the read-only **step branches**
 
 The project is broken into branches from 1 to 9.  Branch 1 starts with a minimal skeleton project, branch 9 is the full working example.
 
@@ -34,13 +33,18 @@ The project is broken into branches from 1 to 9.  Branch 1 starts with a minimal
 1. [**step-9**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/step-9) - Final working example with css3 animation, sass, and grunt
 1. [**complete-ui**](https://github.com/EMC-UI/emc-hackathon-tweets/tree/complete-ui) - In this step, the UI is complete, and you provide the backend plumbing
 
-## Checkout a branch
 Once you've picked a starting point, checkout one of the named branches.  For example, to checkout the **step-1** branch:
 ```
 git checkout step-1
 ```
 
-## Hack away!
+### 3. Create a branch for your work
+The example branches are shared by everyone, so they are read only.  Create a branch to contain your work.  Maybe name it after your team.  For example:
+```
+git checkout -b fantastic-five-master
+```
+
+### 4. Hack away!
 The basic workflow you should follow goes like this:<br/>
 1. Write code, run code, have fun<br/>
 2. `git add {filename}` to add new files<br/>
