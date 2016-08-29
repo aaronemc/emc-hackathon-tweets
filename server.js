@@ -3,7 +3,7 @@
 
 const express = require('express')
 const restClient = require('request-promise')
-const Rx = require('bower/lib/node_modules/rx-lite/rx.lite')
+const Rx = require('rx/dist/rx.all.js')
 
 
 module.exports = (() => {
