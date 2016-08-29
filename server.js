@@ -20,6 +20,35 @@ module.exports = (() => {
 
 
     let getTweets = (req, res, next) => {
+
+        rxTweets()
+        res.json('Hack')
+        // let searchTweetsReq = {
+        //     'request': 'GET',
+        //     'headers': {
+        //         'Authorization': 'Bearer ' + twitterAuthToken
+        //     },
+        //     'uri': twitterSearchAPI,
+        //     'qs': {
+        //         'q': twitterSearchString,
+        //         'count': 50
+        //     },
+        //     json: true
+        // }
+        //
+        // restClient(searchTweetsReq)
+        //     .then((tweets) => {
+        //         console.log(JSON.stringify(tweets, null, '  '))
+        //         res.json(tweets)
+        //     })
+        //     .catch((err) => {
+        //         res.status(500).json({'error': err})
+        //         console.log('error', err)
+        //     })
+
+    }
+
+    let rxTweets = () => {
         let searchTweetsReq = {
             'request': 'GET',
             'headers': {
@@ -35,16 +64,14 @@ module.exports = (() => {
 
         restClient(searchTweetsReq)
             .then((tweets) => {
+                console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
                 console.log(JSON.stringify(tweets, null, '  '))
-                res.json(tweets)
+
             })
             .catch((err) => {
-                res.status(500).json({'error': err})
                 console.log('error', err)
             })
-
     }
-
 
     let handleAuth = (req, res, next) => {
         console.log('handling auth')
