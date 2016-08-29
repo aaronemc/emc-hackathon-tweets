@@ -3,6 +3,7 @@
 
 const express = require('express')
 const restClient = require('request-promise')
+const rx = require('rxjs/Rx')
 
 
 module.exports = (() => {
@@ -21,56 +22,56 @@ module.exports = (() => {
 
     let getTweets = (req, res, next) => {
 
+        console.log('getTweet')
         rxTweets()
         res.json('Hack')
-        // let searchTweetsReq = {
-        //     'request': 'GET',
-        //     'headers': {
-        //         'Authorization': 'Bearer ' + twitterAuthToken
-        //     },
-        //     'uri': twitterSearchAPI,
-        //     'qs': {
-        //         'q': twitterSearchString,
-        //         'count': 50
-        //     },
-        //     json: true
-        // }
-        //
-        // restClient(searchTweetsReq)
-        //     .then((tweets) => {
-        //         console.log(JSON.stringify(tweets, null, '  '))
-        //         res.json(tweets)
-        //     })
-        //     .catch((err) => {
-        //         res.status(500).json({'error': err})
-        //         console.log('error', err)
-        //     })
 
     }
 
     let rxTweets = () => {
+        console.log('rxTweet')
+        var requestStream = rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
+        /*requestStream.subscribe(function(requestUrl) {
+
+            rxquery(requestUrl)
+                .then((tweets) => {
+                    console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
+                    console.log(JSON.stringify(tweets, null, '  '))
+
+                })
+                .catch((err) => {
+                    console.log('error', err)
+                })
+
+
+        })*/
+    }
+
+    let rxquery = (requestUrl) => {
+        var uri = requestUrl.split('?')
         let searchTweetsReq = {
             'request': 'GET',
             'headers': {
                 'Authorization': 'Bearer ' + twitterAuthToken
             },
-            'uri': twitterSearchAPI,
+            'uri': uri[0],
             'qs': {
-                'q': twitterSearchString,
+                'q': uri[1],
                 'count': 50
             },
             json: true
         }
 
-        restClient(searchTweetsReq)
-            .then((tweets) => {
-                console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
-                console.log(JSON.stringify(tweets, null, '  '))
+        return restClient(searchTweetsReq);
+        //       resp.then((tweets) => {
+        //               console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
+        //               console.log(JSON.stringify(tweets, null, '  '))
+        //
+        //           })
+        //           .catch((err) => {
+        //               console.log('error', err)
+        //           })
 
-            })
-            .catch((err) => {
-                console.log('error', err)
-            })
     }
 
     let handleAuth = (req, res, next) => {
