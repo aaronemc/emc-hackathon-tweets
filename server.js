@@ -31,16 +31,16 @@ module.exports = (() => {
     let rxTweets = () => {
         console.log('rxTweet')
         var requestStream = Rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
-        requestStream.subscribe(function(requestUrl) {
-            rxquery(requestUrl)
-                .then((tweets) => {
-                    console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
-                    console.log(JSON.stringify(tweets, null, '  '))
+        //requestStream.subscribe(function(requestUrl) {
 
-                })
-                .catch((err) => {
-                    console.log('error', err)
-                })
+        var responseStream = requestStream
+            .flatMap(function (requestUrl) {
+                return Rx.Observable.fromPromise(rxquery(requestUrl))
+            })
+
+        responseStream.subscribe(function (response) {
+            console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
+            console.log(JSON.stringify(response, null, '  '))
         })
     }
 
