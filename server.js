@@ -3,7 +3,7 @@
 
 const express = require('express')
 const restClient = require('request-promise')
-const rx = require('rxjs/Rx')
+const Rx = require('bower/lib/node_modules/rx-lite/rx.lite')
 
 
 module.exports = (() => {
@@ -30,9 +30,8 @@ module.exports = (() => {
 
     let rxTweets = () => {
         console.log('rxTweet')
-        var requestStream = rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
-        /*requestStream.subscribe(function(requestUrl) {
-
+        var requestStream = Rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
+        requestStream.subscribe(function(requestUrl) {
             rxquery(requestUrl)
                 .then((tweets) => {
                     console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
@@ -42,9 +41,7 @@ module.exports = (() => {
                 .catch((err) => {
                     console.log('error', err)
                 })
-
-
-        })*/
+        })
     }
 
     let rxquery = (requestUrl) => {
@@ -63,14 +60,6 @@ module.exports = (() => {
         }
 
         return restClient(searchTweetsReq);
-        //       resp.then((tweets) => {
-        //               console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
-        //               console.log(JSON.stringify(tweets, null, '  '))
-        //
-        //           })
-        //           .catch((err) => {
-        //               console.log('error', err)
-        //           })
 
     }
 
