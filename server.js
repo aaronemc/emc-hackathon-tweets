@@ -23,15 +23,13 @@ module.exports = (() => {
     let getTweets = (req, res, next) => {
 
         console.log('getTweet')
-        rxTweets()
-        res.json('Hack')
+        res.json(rxTweets())
 
     }
 
     let rxTweets = () => {
-        console.log('rxTweet')
+        console.log('rxTweets')
         var requestStream = Rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
-        //requestStream.subscribe(function(requestUrl) {
 
         var responseStream = requestStream
             .flatMap(function (requestUrl) {
@@ -39,8 +37,15 @@ module.exports = (() => {
             })
 
         responseStream.subscribe(function (response) {
-            console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
-            console.log(JSON.stringify(response, null, '  '))
+            if (connectionsArray.length) {
+                var pollingTimer = setTimeout(rxTweets, 10000);
+                console.log(JSON.stringify(response, null, '  '))
+                updateSockets({
+                    data: response
+                })
+            }
+//            console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
+//            console.log(JSON.stringify(response, null, '  '))
         })
     }
 
@@ -94,15 +99,45 @@ module.exports = (() => {
 
     }
 
-    let init = () => {
-        let app = express()
-        app.use(express.static('.'))
+    let app = express()
+    let http = require('http').Server(app)
+    let io = require('socket.io')(http)
 
+    let connectionsArray = []
+
+    let  updateSockets = (data) => {
+        connectionsArray.forEach(function(tmpSocket) {
+            tmpSocket.volatile.emit('notification', data);
+        })
+    }
+
+    let init = () => {
+
+        app.use(express.static('.'))
         app.post('/auth', handleAuth)
         app.get('/tweets', getTweets)
 
+        io.on('connection', function(socket){
+            console.log('socket io - a user connected')
+            connectionsArray.push(socket);
+            console.log('Number of connections:' + connectionsArray.length);
+
+            // starting the loop only if at least there is one user connected
+            if (!connectionsArray.length) {
+                rxTweets()
+            }
+            socket.on('disconnect', function(){
+                var socketIndex = connectionsArray.indexOf(socket);
+                console.log('socket = ' + socketIndex + ' disconnected');
+                if (socketIndex >= 0) {
+                    connectionsArray.splice(socketIndex, 1);
+                }
+            })
+
+        })
+
         console.log(`listening on ${port}`)
-        app.listen(port)
+        http.listen(port)
     }
 
     init()

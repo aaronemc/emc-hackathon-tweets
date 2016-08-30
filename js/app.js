@@ -46,10 +46,10 @@
     var init = function(){
       tweets.getTweets().then(
         function success(response){
-          if(!intervalId) {
-            intervalId = startInterval();
-          }
-          var data = response.data;
+          //if(!intervalId) {
+          //  intervalId = startInterval();
+          //}
+          var data = response;
           window.console.log(data.statuses[0]);
           $scope.tweets = data.statuses.reverse();
           // $scope.tweets = _.first(data.statuses.reverse(), 5);
