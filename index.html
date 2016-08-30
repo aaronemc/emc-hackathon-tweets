@@ -14,8 +14,8 @@
         var socket = io();
         socket.on('notification', function (response) {
             window.console.log('notification received')
-            window.console.log(response.data.statuses[0]);
-            document.getElementById('datatweets').innerHTML =  response.data.statuses[0].text;
+            window.console.log(response.data);
+            document.getElementById('datatweets').innerHTML =  response.data.text;
         })
     </script>
 

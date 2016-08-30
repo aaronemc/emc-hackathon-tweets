@@ -17,36 +17,60 @@ module.exports = (() => {
 
     let port = 5000
 
-    const twitterSearchString = 'from:guychurchward OR @emc OR #emc'
+    const twitterSearchString = 'from:guychurchward OR @emc OR #emc OR #trump OR @bbcbreaking'
 
-
-    let getTweets = (req, res, next) => {
-
-        console.log('getTweet')
-        res.json(rxTweets())
-
+    function feedTweets(observer) {
+        return rxquery(twitterSearchAPI + '?' + twitterSearchString).then(tweets => {
+            observer.next(tweets);
+            setTimeout( () => feedTweets(observer), 5000);
+        });
     }
 
     let rxTweets = () => {
-        console.log('rxTweets')
-        var requestStream = Rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
 
-        var responseStream = requestStream
-            .flatMap(function (requestUrl) {
-                return Rx.Observable.fromPromise(rxquery(requestUrl))
-            })
+        var myObservable = Rx.Observable.create(observer => {
+            feedTweets(observer);
+        });
 
-        responseStream.subscribe(function (response) {
-            if (connectionsArray.length) {
-                var pollingTimer = setTimeout(rxTweets, 10000);
-                console.log(JSON.stringify(response, null, '  '))
-                updateSockets({
-                    data: response
+        var lastChecked = new Date();
+
+        myObservable.subscribe(value => {
+            var tweets = Rx.Observable.from(value.statuses.reverse());
+            tweets
+                .filter(tweet => {
+                    var tweetTime = new Date(tweet.created_at);
+                    var thereAreNewTweets = (tweetTime.getTime() > lastChecked.getTime());
+                    if (thereAreNewTweets) {
+                        if (tweetTime.getTime() > lastChecked.getTime()) {
+                            lastChecked = tweetTime;
+                        }
+                    }
+                    return thereAreNewTweets;
                 })
-            }
-//            console.log('Response HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK')
-//            console.log(JSON.stringify(response, null, '  '))
+                .subscribe(value =>  {
+                    value.text = 'DOES THIS WORK ' + value.text;
+                    updateSockets({data: value})
+                })
         })
+
+
+        // console.log('rxTweets')
+        // var requestStream = Rx.Observable.just(twitterSearchAPI + '?' + twitterSearchString)
+        //
+        // var responseStream = requestStream
+        //     .flatMap(function (requestUrl) {
+        //         return Rx.Observable.fromPromise(rxquery(requestUrl))
+        //     })
+        //
+        // responseStream.subscribe(function (response) {
+        //     if (connectionsArray.length) {
+        //         var pollingTimer = setTimeout(rxTweets, 10000);
+        //         console.log(JSON.stringify(response, null, '  '))
+        //         updateSockets({
+        //             data: response
+        //         })
+        //     }
+        // })
     }
 
     let rxquery = (requestUrl) => {
@@ -99,9 +123,6 @@ module.exports = (() => {
 
     }
 
-    let app = express()
-    let http = require('http').Server(app)
-    let io = require('socket.io')(http)
 
     let connectionsArray = []
 
@@ -113,9 +134,12 @@ module.exports = (() => {
 
     let init = () => {
 
+        let app = express()
+        let http = require('http').Server(app)
+        let io = require('socket.io')(http)
+
         app.use(express.static('.'))
         app.post('/auth', handleAuth)
-        app.get('/tweets', getTweets)
 
         io.on('connection', function(socket){
             console.log('socket io - a user connected')
@@ -123,7 +147,7 @@ module.exports = (() => {
             console.log('Number of connections:' + connectionsArray.length);
 
             // starting the loop only if at least there is one user connected
-            if (!connectionsArray.length) {
+            if (connectionsArray.length) {
                 rxTweets()
             }
             socket.on('disconnect', function(){
