@@ -17,11 +17,15 @@ module.exports = (() => {
 
     let port = 5000
 
-    const twitterSearchString = 'from:guychurchward OR @emc OR #emc OR #trump OR @bbcbreaking'
+    const twitterSearchString = 'from:guychurchward OR @emc OR #emc OR #trump OR #hillary OR @bbcbreaking'
+//    const twitterSearchString = 'from:@brownat1'
 
     function feedTweets(observer) {
         return rxquery(twitterSearchAPI + '?' + twitterSearchString).then(tweets => {
             observer.next(tweets);
+            setTimeout( () => feedTweets(observer), 5000);
+        }).catch(error => {
+            console.log('AN ERROR ON CALL TO TWITTER')
             setTimeout( () => feedTweets(observer), 5000);
         });
     }
@@ -35,20 +39,27 @@ module.exports = (() => {
         var lastChecked = new Date();
 
         myObservable.subscribe(value => {
-            var tweets = Rx.Observable.from(value.statuses.reverse());
+            var tweets = Rx.Observable.from(value.statuses.sort(function(a,b){
+                var first = new Date(a.created_at).getTime();
+                var second = new Date(b.created_at).getTime();
+                if (first < second) {
+                    return -1;
+                } else if (first > second) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })).distinct();
             tweets
                 .filter(tweet => {
                     var tweetTime = new Date(tweet.created_at);
-                    var thereAreNewTweets = (tweetTime.getTime() > lastChecked.getTime());
-                    if (thereAreNewTweets) {
-                        if (tweetTime.getTime() > lastChecked.getTime()) {
-                            lastChecked = tweetTime;
-                        }
+                    if (tweetTime.getTime() > lastChecked.getTime()) {
+                        lastChecked = tweetTime;
+                        return true;
                     }
-                    return thereAreNewTweets;
+                    return false;
                 })
                 .subscribe(value =>  {
-                    value.text = 'DOES THIS WORK ' + value.text;
                     updateSockets({data: value})
                 })
         })
