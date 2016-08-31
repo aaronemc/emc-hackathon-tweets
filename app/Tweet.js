@@ -8,4 +8,4 @@ var Tweet = (function () {
     return Tweet;
 }());
 exports.Tweet = Tweet;
-//# sourceMappingURL=Tweet.js.map
+//# sourceMappingURL=tweet.js.map

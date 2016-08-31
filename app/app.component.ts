@@ -1,49 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Tweet } from './tweet';
+import { TweetService } from './tweet.service';
 
 @Component({
     selector: 'my-app',
     template: `
     <h1>{{title}}</h1>
 
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes">
-        {{hero.text}}
+    <ul class="tweets">
+      <li *ngFor="let tweet of tweets">
+        {{tweet.text}}
       </li>
     </ul>
-    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
   `,
     styles: [`
     
   `],
-    providers: [HeroService]
+    providers: [TweetService]
 })
 export class AppComponent implements OnInit {
     errorMessage: string;
     title = "Today\'s Tweets";
-    heroes: Hero[];
+    tweets: Tweet[];
 
-    selectedHero: Hero;
-    constructor(private heroService: HeroService) { }
-    getHeroes(): void {
-        // this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-    }
+    constructor(private tweetService: TweetService) { }
 
     getTweets(): void {
-        // this.heroService.getTweets().then(heroes => this.heroes = heroes);
-        this.heroService.getTweets()
+
+        this.tweetService.getTweets()
             .then(
-                heroes => this.heroes = heroes,
+                tweets => this.tweets = tweets,
                 error =>  this.errorMessage = <any>error);
 
     }
 
     ngOnInit(): void {
-        //this.getHeroes();
         this.getTweets();
-    }
-    onSelect(hero: Hero): void {
-        this.selectedHero = hero;
     }
 }
